@@ -25,6 +25,7 @@ en:
   unit_price: "Price"
   quantity: "Quantity"
   checkout: "Checkout"
+  continue_shopping: "Continue Shopping"
   delete: "Remove"
   your_coupon: "Your Coupons"
   menu_home: "Home"
@@ -59,3 +60,4 @@ en:
   show: "Show"
   back: "Back"
   edit: "Edit"
+  submit: "Submit"

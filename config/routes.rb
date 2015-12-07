@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
   #resources :users
   #root 'welcome#index'
-  scope "(:locale)", locale: /ja|nl/ do
-    resources :users
+  scope "(:locale)", :locale => /ja|en/ do
+     resources :users
   end
 
   root 'pages#index'

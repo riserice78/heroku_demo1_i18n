@@ -25,6 +25,7 @@ ja:
   unit_price: "価格"
   quantity: "数量"
   checkout: "レジへ進む"
+  continue_shopping: "買い物を続ける"
   delete: "削除"
   your_coupon: "あなたのクーポン"
   menu_home: "ホーム"
@@ -59,3 +60,4 @@ ja:
   show: "表示"
   back: "戻る"
   edit: "編集"
+  submit: "作成"
