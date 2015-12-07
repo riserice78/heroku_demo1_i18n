@@ -1,0 +1,26 @@
+<style>
+	#store_image{
+		height:300px;
+		background-size:contain;
+		background-position: center top;
+		background-repeat:no-repeat;
+	}
+</style>
+
+<div class="container">
+	<h3><%=@store['name']%></h3>
+	<div id="store_image" style="background-image:url(<%=@store['image_url__c']%>)">
+	</div>
+	<address>
+	  <strong><%= t('address') %></strong><br>
+	  <a href="geo:<%=@store['location__latitude__s']%>,<%=@store['location__longitude__s']%>" target="_blank"><%=@store['address__c']%></a>
+	</address>
+	<div>
+	  <strong><%= t('phone') %></strong><br>
+	  <a href="tel:<%=@store['phone__c']%>"><%=@store['phone__c']%></a>
+	</div>
+	<div>
+	  <strong><%= t('operating_hours') %></strong><br>
+	  <%=@store['operating_hour__c']%>
+	</div>
+</div>

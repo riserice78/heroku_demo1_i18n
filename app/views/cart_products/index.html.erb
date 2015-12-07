@@ -1,0 +1,25 @@
+<div class="container">
+<h3><%= t('your_cart') %></h3>
+	<table class="table">
+		<tr>
+			<th colspan="2"><%= t('product') %></th>
+			<th><%= t('unit_price') %></th>
+			<th><%= t('quantity') %></th>
+			<th></th>
+		</tr>
+		<% @res.each do |product| %>
+			<tr>
+				<td><img src="<%=product['image_url__c']%>" style="width:50px;" /></td>
+				<td><%=product['name']%></td>
+				<td><%=product['price__c']%></td>
+				<td><%=product['quantity__c']%></td>
+				<td><%=link_to( t('delete'), remove_path(product['cartitem_id']))%></td>
+			</tr>
+		<% end %>
+	</table>
+
+	<div class="text-center">
+		<button class="btn btn-danger"><%= t('checkout') %></button>
+	</div>
+
+</div>

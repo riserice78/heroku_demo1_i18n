@@ -1,0 +1,9 @@
+{
+  "name": "Heroku demo 1 - i18n version",
+  "description": "created by yusuke oshiro",
+  "repository": "https://github.com/riserice78/heroku_demo1_i18n",
+  "logo": "https://www.herokucdn.com/deploy/button.svg",
+  "keywords": ["heroku","demo","rails","heroku connect"],
+  "addons": ["heroku-postgresql","herokuconnect"],
+  "scripts": { "postdeploy": "bundle exec rake db:migrate" }
+}
