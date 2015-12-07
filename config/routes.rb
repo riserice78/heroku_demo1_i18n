@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   #get 'sessions/new'
   get 'login/:locale',    :to => 'sessions#new',      :as => 'login'
-  get  'login',    :to => 'sessions#new',      :as => 'login'
+  #get  'login',    :to => 'sessions#new',      :as => 'login'
   get  'logout',   :to => 'sessions#destroy',  :as => 'logout'
   post 'sessions', :to => 'sessions#create',   :as => 'sessions'
   get  'products', :to => 'products#index',    :as => 'products'
