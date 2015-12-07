@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   get  'products', :to => 'products#index',    :as => 'products'
   get  'cart',     :to => 'cart_products#index',:as => 'cart'
 
-  resources :users
+  #resources :users
   #root 'welcome#index'
   root 'pages#index'
-  get  'userid/:locale',   :to => 'pages#userid', :as => 'userid'
+  get 'users/new/:locale', :to => 'users#new'
+  get 'userid/:locale',   :to => 'pages#userid', :as => 'userid'
   #get  'userid',   :to => 'pages#userid', :as => 'userid'
   get 'stores', :to => 'stores#index', :as => 'stores'
   get 'store/:id',  :to => 'stores#show',  :as => 'store'
