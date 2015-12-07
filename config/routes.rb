@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   #get 'sessions/new'
+  get 'login/:locale',    :to => 'sessions#new',      :as => 'login'
   get  'login',    :to => 'sessions#new',      :as => 'login'
   get  'logout',   :to => 'sessions#destroy',  :as => 'logout'
   post 'sessions', :to => 'sessions#create',   :as => 'sessions'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   resources :users
   #root 'welcome#index'
   root 'pages#index'
+  get  'userid/:locale',   :to => 'pages#userid', :as => 'userid'
   get  'userid',   :to => 'pages#userid', :as => 'userid'
   get 'stores', :to => 'stores#index', :as => 'stores'
   get 'store/:id',  :to => 'stores#show',  :as => 'store'
@@ -17,6 +19,11 @@ Rails.application.routes.draw do
   get 'coupons', :to => 'coupons#index', :as => 'coupons'
   get 'addtocart/:pid', :to => 'cart_products#add'  , :as=> 'addtocart'
   get 'remove/:id', :to => 'cart_products#remove', :as => 'remove'
+
+
+  scope "(:locale)", locale: /ja|nl/ do
+    resources :books
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
