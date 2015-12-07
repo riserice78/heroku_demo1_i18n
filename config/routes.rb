@@ -10,8 +10,11 @@ Rails.application.routes.draw do
 
   #resources :users
   #root 'welcome#index'
+  scope "(:locale)", locale: /ja|nl/ do
+    resources :users
+  end
+
   root 'pages#index'
-  get 'users/new/:locale', :to => 'users#new'
   get 'userid/:locale',   :to => 'pages#userid', :as => 'userid'
   #get  'userid',   :to => 'pages#userid', :as => 'userid'
   get 'stores', :to => 'stores#index', :as => 'stores'
@@ -21,10 +24,6 @@ Rails.application.routes.draw do
   get 'addtocart/:pid', :to => 'cart_products#add'  , :as=> 'addtocart'
   get 'remove/:id', :to => 'cart_products#remove', :as => 'remove'
 
-
-  scope "(:locale)", locale: /ja|nl/ do
-    resources :books
-  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
