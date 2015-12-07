@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #root 'welcome#index'
   root 'pages#index'
   get  'userid/:locale',   :to => 'pages#userid', :as => 'userid'
-  get  'userid',   :to => 'pages#userid', :as => 'userid'
+  #get  'userid',   :to => 'pages#userid', :as => 'userid'
   get 'stores', :to => 'stores#index', :as => 'stores'
   get 'store/:id',  :to => 'stores#show',  :as => 'store'
 
